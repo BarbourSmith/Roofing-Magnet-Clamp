@@ -288,8 +288,8 @@
                         {
                             "atomType": "Difference",
                             "name": "Difference",
-                            "x": 0.5801526717557253,
-                            "y": 0.902027027027027,
+                            "x": 0.4402035623409669,
+                            "y": 0.9155405405405405,
                             "uniqueID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
                             "ioValues": [
                                 {
@@ -307,6 +307,11 @@
                             "uniqueID": "e5396b1e-7d2f-4a35-9377-09ebd16b2a54",
                             "ioValues": [
                                 {
+                                    "name": "geometry",
+                                    "ioValue": "3668cb79-46a5-4dcb-a0e6-52062d205282",
+                                    "currentEquation": null
+                                },
+                                {
                                     "name": "x-axis degrees",
                                     "ioValue": 0,
                                     "currentEquation": null
@@ -318,8 +323,8 @@
                                 },
                                 {
                                     "name": "z-axis degrees",
-                                    "ioValue": 10,
-                                    "currentEquation": "10"
+                                    "ioValue": 180,
+                                    "currentEquation": "180"
                                 }
                             ]
                         }
