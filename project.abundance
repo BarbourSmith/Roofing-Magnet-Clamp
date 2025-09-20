@@ -110,7 +110,7 @@
                             "ioValues": [
                                 {
                                     "name": "number or geometry",
-                                    "ioValue": "b7ba3a97-c40d-401b-b87f-ed87731ec662",
+                                    "ioValue": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
                                     "currentEquation": null
                                 }
                             ]
@@ -133,13 +133,13 @@
                             "ioValues": [
                                 {
                                     "name": "x length",
-                                    "ioValue": 60,
-                                    "currentEquation": null
+                                    "ioValue": 25,
+                                    "currentEquation": "25"
                                 },
                                 {
                                     "name": "y length",
-                                    "ioValue": 25,
-                                    "currentEquation": null
+                                    "ioValue": 60,
+                                    "currentEquation": "60"
                                 }
                             ]
                         },
@@ -176,13 +176,13 @@
                                 },
                                 {
                                     "name": "xDist",
-                                    "ioValue": 60,
-                                    "currentEquation": "60"
+                                    "ioValue": 58,
+                                    "currentEquation": "58"
                                 },
                                 {
                                     "name": "yDist",
-                                    "ioValue": 10,
-                                    "currentEquation": "10"
+                                    "ioValue": 18,
+                                    "currentEquation": "18"
                                 },
                                 {
                                     "name": "zDist",
@@ -194,8 +194,8 @@
                         {
                             "atomType": "Difference",
                             "name": "Difference",
-                            "x": 0.4809160305343511,
-                            "y": 0.8851351351351351,
+                            "x": 0.5470737913486006,
+                            "y": 0.6621621621621622,
                             "uniqueID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
                             "ioValues": [
                                 {
@@ -219,12 +219,6 @@
                             "ap2ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1"
                         },
                         {
-                            "ap1Name": "number or geometry",
-                            "ap2Name": "number or geometry",
-                            "ap1ID": "2efb5a84-2ed4-4971-bf9d-ffe59a288a64",
-                            "ap2ID": "5a0105fc-e203-4e0e-8887-d74bc27dca17"
-                        },
-                        {
                             "ap1Name": "geometry",
                             "ap2Name": "geometry",
                             "ap1ID": "7ed34e9a-d068-4f65-8246-8ee20609d674",
@@ -241,6 +235,12 @@
                             "ap2Name": "geometry1",
                             "ap1ID": "3668cb79-46a5-4dcb-a0e6-52062d205282",
                             "ap2ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1"
+                        },
+                        {
+                            "ap1Name": "geometry",
+                            "ap2Name": "number or geometry",
+                            "ap1ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
+                            "ap2ID": "5a0105fc-e203-4e0e-8887-d74bc27dca17"
                         }
                     ],
                     "fileTypeVersion": 1,
