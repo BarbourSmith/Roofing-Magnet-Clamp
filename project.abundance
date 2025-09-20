@@ -1,0 +1,15 @@
+{
+    "atomType": "Molecule",
+    "name": "Roofing Magnet Clamp",
+    "x": 0,
+    "y": 0,
+    "uniqueID": "40c893e5-2805-45fa-8c52-3c55ccbc4e42",
+    "ioValues": [],
+    "topLevel": true,
+    "allAtoms": [],
+    "allConnectors": [],
+    "unitsKey": "MM",
+    "fileTypeVersion": 1,
+    "compiledBom": {},
+    "filetypeVersion": 1
+}
