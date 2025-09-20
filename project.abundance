@@ -30,7 +30,7 @@
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": "3cb69768-3272-4bd1-b412-6552ae5666d2",
+                    "ioValue": "74f189ea-5c45-4394-b11d-cca439b236c7",
                     "currentEquation": null
                 },
                 {
@@ -53,106 +53,6 @@
                     "currentEquation": null
                 }
             ]
-        },
-        {
-            "atomType": "GitHubMolecule",
-            "name": "Corrugated-Roofing-Circle-v2",
-            "x": 0.14249363867684478,
-            "y": 0.42905405405405406,
-            "uniqueID": "3cb69768-3272-4bd1-b412-6552ae5666d2",
-            "ioValues": [
-                {
-                    "name": "Number",
-                    "ioValue": 75,
-                    "currentEquation": null
-                }
-            ],
-            "topLevel": false,
-            "allAtoms": [
-                {
-                    "atomType": "Output",
-                    "name": "Output",
-                    "x": 0.98,
-                    "y": 0.5,
-                    "uniqueID": "c9b07578-feb3-4935-8ff2-a9abcb2ce05e",
-                    "ioValues": [
-                        {
-                            "name": "number or geometry",
-                            "ioValue": "af6c9f0a-91a3-4f1c-927c-5e583b267a3c",
-                            "currentEquation": null
-                        }
-                    ]
-                },
-                {
-                    "atomType": "Code",
-                    "name": "Code",
-                    "x": 0.4708994708994709,
-                    "y": 0.4444444444444444,
-                    "uniqueID": "af6c9f0a-91a3-4f1c-927c-5e583b267a3c",
-                    "ioValues": [
-                        {
-                            "name": "number",
-                            "ioValue": 75,
-                            "currentEquation": null
-                        },
-                        {
-                            "name": "height",
-                            "ioValue": 40,
-                            "currentEquation": null
-                        }
-                    ],
-                    "codeVersion": 1,
-                    "code": " \n      //Inputs:[number, height]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      let factor = 2;\n      const period = 76;\n      const amplitude = 19 / 2;\n      const xScale = period / (2 * Math.PI);\n      const nPeriods = number; \n      const circumference = nPeriods * period;\n      const radius = circumference/(2*Math.PI);\n      const angle = 35\n\n      function computeX(fraction){\n        const theta = 2 * Math.PI *fraction; // angle in radians\n        const x = radius*Math.cos(theta);\n        return x;\n      }\n\n      function computeY(fraction){\n        const theta = 2 * Math.PI * fraction; // angle in radians\n        const y = radius*Math.sin(theta);\n        return y;\n      }\n\n      function tangentAngle(fraction, clockwise = false) {\n          const theta = 2 * Math.PI * fraction;\n          const phi = clockwise\n              ? theta - Math.PI / 2 // CW\n              : theta + Math.PI / 2; // CCW\n\n          let degrees = phi * (180 / Math.PI);\n        \n          return degrees; // radians\n      }\n      \n      let shape = replicad.draw();\n\n      \n      shape.movePointerTo([computeX(0), computeY(0)])\n      \n      for (let i = 0; i < nPeriods; i++) {\n        let oneLess = (2*i-1)/(2*number);\n        let fractionStart = i/number //The percentage of the way around the circle that this point is\n        let fractionMiddle =  (2*i+1)/(2*number);\n      \n        // First spline: 0 to ÃÂ (up and back down)\n        shape = shape.smoothSplineTo(\n          [computeX(fractionStart), computeY(fractionStart)],\n          {\n            startTangent: tangentAngle(oneLess) + angle,         // Going up at start\n            startFactor: factor,\n            endTangent: tangentAngle(fractionStart)-angle,          // Coming down at ÃÂ\n            endFactor: factor\n          }\n        )\n        // Second spline: ÃÂ to 2ÃÂ (down and back up)\n        .smoothSplineTo(\n          [computeX(fractionMiddle), computeY(fractionMiddle)],\n          {\n            startTangent: tangentAngle(fractionStart)-angle,        // Going down at ÃÂ\n            startFactor: factor,\n            endTangent: tangentAngle(fractionMiddle) + angle,           // Coming up at 2ÃÂ\n            endFactor: factor\n          }\n        );\n      }\n\n      shape = shape.smoothSplineTo(\n          [computeX(0), computeY(0)],\n          {\n            startTangent: tangentAngle((2*number-1)/(2*number))+angle,        // Going down at ÃÂ\n            startFactor: factor,\n            endTangent: tangentAngle(0) - angle,           // Coming up at 2ÃÂ\n            endFactor: factor\n          });\n      \n      // Add base lines and close shape\n      shape = shape\n        .close();                          // Close path\n\n      const newPlane = new replicad.Plane().pivot(0, 'Y');\n      \n      //For our new geometry we need to define the tags, color, plane, etc\n      let shape2 = {\n          geometry: [shape], \n          tags: [\"aTag\"],\n          color: '#A3CE5B',\n          plane: newPlane,\n          bom: []\n      }\n      \n      //Then we can return our created shape in just the same way\n      return shape2\n      "
-                },
-                {
-                    "atomType": "Input",
-                    "name": "Number",
-                    "x": 0.07755,
-                    "y": 0.39444444444444443,
-                    "uniqueID": "1e4c4745-5530-4f4e-9015-964044a69ef9",
-                    "ioValues": [],
-                    "type": "number"
-                }
-            ],
-            "allConnectors": [
-                {
-                    "ap1Name": "output",
-                    "ap2Name": "number or geometry",
-                    "ap1ID": "af6c9f0a-91a3-4f1c-927c-5e583b267a3c",
-                    "ap2ID": "c9b07578-feb3-4935-8ff2-a9abcb2ce05e"
-                },
-                {
-                    "ap1Name": "number or geometry",
-                    "ap2Name": "number",
-                    "ap1ID": "1e4c4745-5530-4f4e-9015-964044a69ef9",
-                    "ap2ID": "af6c9f0a-91a3-4f1c-927c-5e583b267a3c"
-                }
-            ],
-            "parentRepo": {
-                "lastFoundGit": "2025-09-20T15:47:14.645Z",
-                "privateRepo": false,
-                "repoName": "Corrugated-Roofing-Circle-v2",
-                "dateCreated": "2025-07-11T20:40:29Z",
-                "readMe": "https://raw.githubusercontent.com/BarbourSmith/Corrugated-Roofing-Circle-v2/master/README.md?sanitize=true",
-                "yyyy": 2025,
-                "topMoleculeID": "74e97323-dbcf-4577-bf9a-c3bca8a2acee",
-                "githubMoleculesUsed": [],
-                "html_url": "https://github.com/BarbourSmith/Corrugated-Roofing-Circle-v2",
-                "topics": [],
-                "parentRepo": null,
-                "forks": 0,
-                "dateModified": "739468",
-                "ranking": 0,
-                "searchField": "corrugated-roofing-circle-v2 barboursmith this project recreates the corrugated roofing circle using splines instead of a sampled function which is hopefully more performant ",
-                "owner": "BarbourSmith",
-                "description": "This project recreates the corrugated roofing circle using splines instead of a sampled function which is hopefully more performant",
-                "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Corrugated-Roofing-Circle-v2/master/project.abundance?sanitize=true",
-                "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Corrugated-Roofing-Circle-v2/master/project.svg?sanitize=true",
-                "isLocal": false
-            },
-            "unitsKey": "Unitless",
-            "fileTypeVersion": 1,
-            "compiledBom": []
         },
         {
             "atomType": "Molecule",
@@ -207,7 +107,13 @@
                             "x": 0.98,
                             "y": 0.5,
                             "uniqueID": "5a0105fc-e203-4e0e-8887-d74bc27dca17",
-                            "ioValues": []
+                            "ioValues": [
+                                {
+                                    "name": "number or geometry",
+                                    "ioValue": "b7ba3a97-c40d-401b-b87f-ed87731ec662",
+                                    "currentEquation": null
+                                }
+                            ]
                         },
                         {
                             "atomType": "Input",
@@ -270,13 +176,13 @@
                                 },
                                 {
                                     "name": "xDist",
-                                    "ioValue": 0,
-                                    "currentEquation": null
+                                    "ioValue": 60,
+                                    "currentEquation": "60"
                                 },
                                 {
                                     "name": "yDist",
-                                    "ioValue": 910,
-                                    "currentEquation": null
+                                    "ioValue": 10,
+                                    "currentEquation": "10"
                                 },
                                 {
                                     "name": "zDist",
@@ -288,43 +194,19 @@
                         {
                             "atomType": "Difference",
                             "name": "Difference",
-                            "x": 0.4402035623409669,
-                            "y": 0.9155405405405405,
+                            "x": 0.4809160305343511,
+                            "y": 0.8851351351351351,
                             "uniqueID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
                             "ioValues": [
                                 {
-                                    "name": "geometry2",
-                                    "ioValue": "b7ba3a97-c40d-401b-b87f-ed87731ec662",
-                                    "currentEquation": null
-                                }
-                            ]
-                        },
-                        {
-                            "atomType": "Rotate",
-                            "name": "Rotate",
-                            "x": 0.4631043256997456,
-                            "y": 0.5743243243243243,
-                            "uniqueID": "e5396b1e-7d2f-4a35-9377-09ebd16b2a54",
-                            "ioValues": [
-                                {
-                                    "name": "geometry",
+                                    "name": "geometry1",
                                     "ioValue": "3668cb79-46a5-4dcb-a0e6-52062d205282",
                                     "currentEquation": null
                                 },
                                 {
-                                    "name": "x-axis degrees",
-                                    "ioValue": 0,
+                                    "name": "geometry2",
+                                    "ioValue": "b7ba3a97-c40d-401b-b87f-ed87731ec662",
                                     "currentEquation": null
-                                },
-                                {
-                                    "name": "y-axis degrees",
-                                    "ioValue": 0,
-                                    "currentEquation": null
-                                },
-                                {
-                                    "name": "z-axis degrees",
-                                    "ioValue": 180,
-                                    "currentEquation": "180"
                                 }
                             ]
                         }
@@ -335,6 +217,12 @@
                             "ap2Name": "geometry2",
                             "ap1ID": "2efb5a84-2ed4-4971-bf9d-ffe59a288a64",
                             "ap2ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1"
+                        },
+                        {
+                            "ap1Name": "number or geometry",
+                            "ap2Name": "number or geometry",
+                            "ap1ID": "2efb5a84-2ed4-4971-bf9d-ffe59a288a64",
+                            "ap2ID": "5a0105fc-e203-4e0e-8887-d74bc27dca17"
                         },
                         {
                             "ap1Name": "geometry",
@@ -350,20 +238,8 @@
                         },
                         {
                             "ap1Name": "geometry",
-                            "ap2Name": "geometry",
-                            "ap1ID": "3668cb79-46a5-4dcb-a0e6-52062d205282",
-                            "ap2ID": "e5396b1e-7d2f-4a35-9377-09ebd16b2a54"
-                        },
-                        {
-                            "ap1Name": "geometry",
-                            "ap2Name": "number or geometry",
-                            "ap1ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
-                            "ap2ID": "5a0105fc-e203-4e0e-8887-d74bc27dca17"
-                        },
-                        {
-                            "ap1Name": "geometry",
                             "ap2Name": "geometry1",
-                            "ap1ID": "e5396b1e-7d2f-4a35-9377-09ebd16b2a54",
+                            "ap1ID": "3668cb79-46a5-4dcb-a0e6-52062d205282",
                             "ap2ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1"
                         }
                     ],
@@ -381,6 +257,126 @@
             ],
             "fileTypeVersion": 1,
             "compiledBom": {}
+        },
+        {
+            "atomType": "GitHubMolecule",
+            "name": "Corrugated-Roofing-Line",
+            "x": 0.16793893129770993,
+            "y": 0.5033783783783784,
+            "uniqueID": "74f189ea-5c45-4394-b11d-cca439b236c7",
+            "ioValues": [
+                {
+                    "name": "Number",
+                    "ioValue": 4,
+                    "currentEquation": "4"
+                },
+                {
+                    "name": "Height",
+                    "ioValue": 40,
+                    "currentEquation": null
+                }
+            ],
+            "topLevel": false,
+            "allAtoms": [
+                {
+                    "atomType": "Output",
+                    "name": "Output",
+                    "x": 0.98,
+                    "y": 0.5,
+                    "uniqueID": "4fc2c1c0-7390-4d07-bdd3-1f642e86a318",
+                    "ioValues": [
+                        {
+                            "name": "number or geometry",
+                            "ioValue": "dc556a57-bd8b-4bcf-ae21-6c61b472ed61",
+                            "currentEquation": null
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Code",
+                    "name": "Code",
+                    "x": 0.4027777777777778,
+                    "y": 0.5069637883008357,
+                    "uniqueID": "dc556a57-bd8b-4bcf-ae21-6c61b472ed61",
+                    "ioValues": [
+                        {
+                            "name": "number",
+                            "ioValue": 4,
+                            "currentEquation": null
+                        },
+                        {
+                            "name": "height",
+                            "ioValue": 40,
+                            "currentEquation": null
+                        }
+                    ],
+                    "codeVersion": 1,
+                    "code": " \n      //Inputs:[number, height]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      let factor = 2;\n      const period = 76;\n      const xScale = period / (2 * Math.PI);\n      const nPeriods = number; // ÃÂ°ÃÂÃÂÃÂ Number of periods to repeat\n      const angle = 35;\n      \n      let shape = replicad.draw();\n      \n      for (let i = 0; i < nPeriods; i++) {\n        let offsetX = i * period;\n      \n        // First spline: 0 to ÃÂÃÂ (up and back down)\n        shape = shape.smoothSplineTo(\n          [offsetX + Math.PI * xScale, 0],\n          {\n            startTangent: angle,         // Going up at start\n            startFactor: factor,\n            endTangent: -1*angle,          // Coming down at ÃÂÃÂ\n            endFactor: factor\n          }\n        )\n        // Second spline: ÃÂÃÂ to 2ÃÂÃÂ (down and back up)\n        .smoothSplineTo(\n          [offsetX + 2 * Math.PI * xScale, 0],\n          {\n            startTangent: -1*angle,        // Going down at ÃÂÃÂ\n            startFactor: factor,\n            endTangent: angle,           // Coming up at 2ÃÂÃÂ\n            endFactor: factor\n          }\n        );\n      }\n      \n      // Add base lines and close shape\n      shape = shape\n        .lineTo([nPeriods * period, -height])  // Right-bottom corner\n        .lineTo([0, -height])                  // Left-bottom corner\n        .close();                          // Close path\n\n      const newPlane = new replicad.Plane().pivot(0, 'Y');\n      \n      //For our new geometry we need to define the tags, color, plane, etc\n      let shape2 = {\n          geometry: [shape], \n          tags: [\"aTag\"],\n          color: '#A3CE5B',\n          plane: newPlane,\n          bom: []\n      }\n      \n      //Then we can return our created shape in just the same way\n      return shape2\n      "
+                },
+                {
+                    "atomType": "Input",
+                    "name": "Number",
+                    "x": 0.07755,
+                    "y": 0.48055555555555557,
+                    "uniqueID": "9afcbe93-d46d-41ce-add4-7476d1df95c6",
+                    "ioValues": [],
+                    "type": "number"
+                },
+                {
+                    "atomType": "Input",
+                    "name": "Height",
+                    "x": 0.07755,
+                    "y": 0.7638888888888888,
+                    "uniqueID": "74ba13b1-00be-4fb3-987b-4e76c4893d39",
+                    "ioValues": [],
+                    "type": "number"
+                }
+            ],
+            "allConnectors": [
+                {
+                    "ap1Name": "output",
+                    "ap2Name": "number or geometry",
+                    "ap1ID": "dc556a57-bd8b-4bcf-ae21-6c61b472ed61",
+                    "ap2ID": "4fc2c1c0-7390-4d07-bdd3-1f642e86a318"
+                },
+                {
+                    "ap1Name": "number or geometry",
+                    "ap2Name": "number",
+                    "ap1ID": "9afcbe93-d46d-41ce-add4-7476d1df95c6",
+                    "ap2ID": "dc556a57-bd8b-4bcf-ae21-6c61b472ed61"
+                },
+                {
+                    "ap1Name": "number or geometry",
+                    "ap2Name": "height",
+                    "ap1ID": "74ba13b1-00be-4fb3-987b-4e76c4893d39",
+                    "ap2ID": "dc556a57-bd8b-4bcf-ae21-6c61b472ed61"
+                }
+            ],
+            "parentRepo": {
+                "lastFoundGit": "2025-09-20T15:47:14.645Z",
+                "privateRepo": false,
+                "repoName": "Corrugated-Roofing-Line",
+                "dateCreated": "2025-07-23T16:56:38Z",
+                "readMe": "https://raw.githubusercontent.com/BarbourSmith/Corrugated-Roofing-Line/master/README.md?sanitize=true",
+                "yyyy": 2025,
+                "topMoleculeID": "ed9cd772-5603-476b-a930-f79dd0f51d32",
+                "githubMoleculesUsed": [],
+                "html_url": "https://github.com/BarbourSmith/Corrugated-Roofing-Line",
+                "topics": [],
+                "parentRepo": null,
+                "forks": 0,
+                "dateModified": "739468",
+                "ranking": 0,
+                "searchField": "corrugated-roofing-line barboursmith a straight line with bumps to match corrugated roofing material ",
+                "owner": "BarbourSmith",
+                "description": "A straight line with bumps to match corrugated roofing material",
+                "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Corrugated-Roofing-Line/master/project.abundance?sanitize=true",
+                "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Corrugated-Roofing-Line/master/project.svg?sanitize=true",
+                "isLocal": false
+            },
+            "unitsKey": "MM",
+            "fileTypeVersion": 1,
+            "compiledBom": []
         }
     ],
     "allConnectors": [
@@ -399,7 +395,7 @@
         {
             "ap1Name": "geometry or number",
             "ap2Name": "geometry",
-            "ap1ID": "3cb69768-3272-4bd1-b412-6552ae5666d2",
+            "ap1ID": "74f189ea-5c45-4394-b11d-cca439b236c7",
             "ap2ID": "b7ba3a97-c40d-401b-b87f-ed87731ec662"
         }
     ],
