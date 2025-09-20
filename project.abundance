@@ -704,13 +704,13 @@
                                 },
                                 {
                                     "name": "xDist",
-                                    "ioValue": 0,
-                                    "currentEquation": null
+                                    "ioValue": -1,
+                                    "currentEquation": "-1"
                                 },
                                 {
                                     "name": "yDist",
-                                    "ioValue": 50,
-                                    "currentEquation": "50"
+                                    "ioValue": -8,
+                                    "currentEquation": "-8"
                                 },
                                 {
                                     "name": "zDist",
