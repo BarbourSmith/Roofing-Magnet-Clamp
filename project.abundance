@@ -156,7 +156,7 @@
         },
         {
             "atomType": "Molecule",
-            "name": "Molecule",
+            "name": "Clamps",
             "x": 0.5165394402035624,
             "y": 0.6925675675675675,
             "uniqueID": "298b115b-1b1f-4954-836c-d49a060a3964",
@@ -252,7 +252,7 @@
                                 {
                                     "name": "height",
                                     "ioValue": 60,
-                                    "currentEquation": "60"
+                                    "currentEquation": null
                                 }
                             ]
                         },
@@ -276,7 +276,7 @@
                                 {
                                     "name": "yDist",
                                     "ioValue": 910,
-                                    "currentEquation": "910"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "zDist",
@@ -288,14 +288,38 @@
                         {
                             "atomType": "Difference",
                             "name": "Difference",
-                            "x": 0.549618320610687,
-                            "y": 0.8513513513513513,
+                            "x": 0.5801526717557253,
+                            "y": 0.902027027027027,
                             "uniqueID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
                             "ioValues": [
                                 {
                                     "name": "geometry2",
                                     "ioValue": "b7ba3a97-c40d-401b-b87f-ed87731ec662",
                                     "currentEquation": null
+                                }
+                            ]
+                        },
+                        {
+                            "atomType": "Rotate",
+                            "name": "Rotate",
+                            "x": 0.4631043256997456,
+                            "y": 0.5743243243243243,
+                            "uniqueID": "e5396b1e-7d2f-4a35-9377-09ebd16b2a54",
+                            "ioValues": [
+                                {
+                                    "name": "x-axis degrees",
+                                    "ioValue": 0,
+                                    "currentEquation": null
+                                },
+                                {
+                                    "name": "y-axis degrees",
+                                    "ioValue": 0,
+                                    "currentEquation": null
+                                },
+                                {
+                                    "name": "z-axis degrees",
+                                    "ioValue": 10,
+                                    "currentEquation": "10"
                                 }
                             ]
                         }
@@ -321,15 +345,21 @@
                         },
                         {
                             "ap1Name": "geometry",
-                            "ap2Name": "geometry1",
+                            "ap2Name": "geometry",
                             "ap1ID": "3668cb79-46a5-4dcb-a0e6-52062d205282",
-                            "ap2ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1"
+                            "ap2ID": "e5396b1e-7d2f-4a35-9377-09ebd16b2a54"
                         },
                         {
                             "ap1Name": "geometry",
                             "ap2Name": "number or geometry",
                             "ap1ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1",
                             "ap2ID": "5a0105fc-e203-4e0e-8887-d74bc27dca17"
+                        },
+                        {
+                            "ap1Name": "geometry",
+                            "ap2Name": "geometry1",
+                            "ap1ID": "e5396b1e-7d2f-4a35-9377-09ebd16b2a54",
+                            "ap2ID": "5cac3a9c-8a47-42f7-9bf2-5a050badfba1"
                         }
                     ],
                     "fileTypeVersion": 1,
