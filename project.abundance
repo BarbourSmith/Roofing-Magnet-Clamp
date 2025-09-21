@@ -98,7 +98,7 @@
                 {
                     "atomType": "Input",
                     "name": "Number",
-                    "x": 0.07755,
+                    "x": 0.029699999999999997,
                     "y": 0.48055555555555557,
                     "uniqueID": "9afcbe93-d46d-41ce-add4-7476d1df95c6",
                     "ioValues": [],
@@ -107,7 +107,7 @@
                 {
                     "atomType": "Input",
                     "name": "Height",
-                    "x": 0.07755,
+                    "x": 0.029699999999999997,
                     "y": 0.7638888888888888,
                     "uniqueID": "74ba13b1-00be-4fb3-987b-4e76c4893d39",
                     "ioValues": [],
@@ -192,7 +192,7 @@
                 {
                     "atomType": "Input",
                     "name": "input",
-                    "x": 0.07755,
+                    "x": 0.029699999999999997,
                     "y": 0.31756756756756754,
                     "uniqueID": "ebfbd6c3-6fb3-4efc-ad27-326f20854db9",
                     "ioValues": [],
@@ -230,7 +230,7 @@
                         {
                             "atomType": "Input",
                             "name": "input",
-                            "x": 0.07755,
+                            "x": 0.029699999999999997,
                             "y": 0.6689189189189189,
                             "uniqueID": "2efb5a84-2ed4-4971-bf9d-ffe59a288a64",
                             "ioValues": [],
@@ -289,7 +289,7 @@
                                 {
                                     "name": "xDist",
                                     "ioValue": 57,
-                                    "currentEquation": "57"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "yDist",
@@ -337,7 +337,7 @@
                                 {
                                     "name": "xDist",
                                     "ioValue": -57,
-                                    "currentEquation": "-57"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "yDist",
@@ -425,7 +425,7 @@
                         {
                             "atomType": "Input",
                             "name": "input",
-                            "x": 0.07755,
+                            "x": 0.029699999999999997,
                             "y": 0.5,
                             "uniqueID": "92091843-62f1-4ee3-a579-11ff0f8f768a",
                             "ioValues": [],
@@ -441,12 +441,12 @@
                                 {
                                     "name": "x length",
                                     "ioValue": 100,
-                                    "currentEquation": "100"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "y length",
                                     "ioValue": 100,
-                                    "currentEquation": "100"
+                                    "currentEquation": null
                                 }
                             ]
                         },
@@ -465,7 +465,7 @@
                                 {
                                     "name": "height",
                                     "ioValue": 24,
-                                    "currentEquation": "24"
+                                    "currentEquation": null
                                 }
                             ]
                         },
@@ -484,12 +484,12 @@
                                 {
                                     "name": "xDist",
                                     "ioValue": 0,
-                                    "currentEquation": "0"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "yDist",
                                     "ioValue": -58,
-                                    "currentEquation": "-58"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "zDist",
@@ -537,7 +537,7 @@
                                 {
                                     "name": "yDist",
                                     "ioValue": 48,
-                                    "currentEquation": "48"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "zDist",
@@ -620,7 +620,7 @@
                         {
                             "atomType": "Input",
                             "name": "input",
-                            "x": 0.07755,
+                            "x": 0.029699999999999997,
                             "y": 0.7804054054054055,
                             "uniqueID": "fd66897f-3290-4d58-85d7-46d131e4097c",
                             "ioValues": [],
@@ -636,7 +636,7 @@
                                 {
                                     "name": "diameter",
                                     "ioValue": 8.4,
-                                    "currentEquation": "8.4"
+                                    "currentEquation": null
                                 }
                             ]
                         },
@@ -655,7 +655,7 @@
                                 {
                                     "name": "height",
                                     "ioValue": 100,
-                                    "currentEquation": "100"
+                                    "currentEquation": null
                                 }
                             ]
                         },
@@ -674,7 +674,7 @@
                                 {
                                     "name": "x-axis degrees",
                                     "ioValue": 90,
-                                    "currentEquation": "90"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "y-axis degrees",
@@ -721,12 +721,12 @@
                                 {
                                     "name": "xDist",
                                     "ioValue": 0,
-                                    "currentEquation": "0"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "yDist",
                                     "ioValue": -8,
-                                    "currentEquation": "-8"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "zDist",
@@ -774,12 +774,12 @@
                                 {
                                     "name": "yDist",
                                     "ioValue": 5,
-                                    "currentEquation": "5"
+                                    "currentEquation": null
                                 },
                                 {
                                     "name": "zDist",
                                     "ioValue": 10,
-                                    "currentEquation": "10"
+                                    "currentEquation": null
                                 }
                             ]
                         },
@@ -808,7 +808,7 @@
                                 {
                                     "name": "zDist",
                                     "ioValue": 40,
-                                    "currentEquation": "40"
+                                    "currentEquation": null
                                 }
                             ]
                         }
@@ -907,6 +907,39 @@
             ],
             "fileTypeVersion": 1,
             "compiledBom": []
+        },
+        {
+            "atomType": "Export",
+            "name": "Export",
+            "x": 0.6137566137566137,
+            "y": 0.27019498607242337,
+            "uniqueID": "d210deca-c45d-469f-8413-cad80408ea59",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "298b115b-1b1f-4954-836c-d49a060a3964",
+                    "currentEquation": null
+                },
+                {
+                    "name": "File Type",
+                    "ioValue": "STL",
+                    "currentEquation": null
+                },
+                {
+                    "name": "Resolution (dpi)",
+                    "ioValue": 96,
+                    "currentEquation": null
+                },
+                {
+                    "name": "Part Name",
+                    "ioValue": "Roofing Magnet Clamp",
+                    "currentEquation": null
+                }
+            ],
+            "type": "STL",
+            "resolution": 96,
+            "importIndex": 0,
+            "partName": "Roofing Magnet Clamp"
         }
     ],
     "allConnectors": [
@@ -927,6 +960,12 @@
             "ap2Name": "number or geometry",
             "ap1ID": "298b115b-1b1f-4954-836c-d49a060a3964",
             "ap2ID": "94a16019-6cf3-427a-9839-a19c2bd4e9e5"
+        },
+        {
+            "ap1Name": "geometry or number",
+            "ap2Name": "geometry",
+            "ap1ID": "298b115b-1b1f-4954-836c-d49a060a3964",
+            "ap2ID": "d210deca-c45d-469f-8413-cad80408ea59"
         }
     ],
     "unitsKey": "MM",
